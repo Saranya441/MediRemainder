@@ -1,0 +1,305 @@
+.edit-medicine-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  backdrop-filter: blur(3px);
+}
+
+.edit-medicine-modal {
+  width: min(630px, 100%);
+  max-height: calc(100vh - 48px);
+  border-radius: 15px;
+  background: var(--white);
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  animation: editMedicineOpen 0.22s ease;
+}
+
+@keyframes editMedicineOpen {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* HEADER */
+
+.edit-medicine-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--white);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.edit-medicine-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-medicine-modal-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-medicine-modal-title h2 {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.edit-medicine-modal-title p {
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.edit-medicine-close {
+  width: 31px;
+  height: 31px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 7px;
+  background: var(--background);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.edit-medicine-close:hover {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+/* FORM */
+
+.edit-medicine-form {
+  padding: 19px 20px 20px;
+}
+
+.edit-medicine-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.edit-medicine-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.edit-medicine-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.edit-medicine-field input,
+.edit-medicine-field select,
+.edit-medicine-field textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--text-primary);
+  font-size: 12px;
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.edit-medicine-field input,
+.edit-medicine-field select {
+  height: 40px;
+
+  padding: 0 10px;
+}
+
+.edit-medicine-field textarea {
+  min-height: 80px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.edit-medicine-field input:focus,
+.edit-medicine-field select:focus,
+.edit-medicine-field textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+/* REMINDER TIMES */
+
+.edit-medicine-time-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.edit-medicine-time-header button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.edit-medicine-times {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.edit-medicine-time-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.edit-medicine-time-row > svg {
+  position: absolute;
+  left: 10px;
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.edit-medicine-time-row input {
+  padding-left: 32px;
+  padding-right: 35px;
+}
+
+.edit-medicine-time-row button {
+  position: absolute;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-medicine-time-row button:hover {
+  background: var(--danger-light);
+}
+
+/* FOOTER */
+
+.edit-medicine-modal-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.edit-medicine-cancel,
+.edit-medicine-save {
+  height: 37px;
+  padding: 0 14px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.edit-medicine-cancel {
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-secondary);
+}
+
+.edit-medicine-save {
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .edit-medicine-overlay {
+    padding: 14px;
+  }
+
+  .edit-medicine-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-medicine-field.full-width {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-medicine-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .edit-medicine-modal {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 17px 17px 0 0;
+  }
+
+  .edit-medicine-modal-header,
+  .edit-medicine-form {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .edit-medicine-times {
+    grid-template-columns: 1fr;
+  }
+
+  .edit-medicine-modal-footer {
+    flex-direction: column-reverse;
+  }
+  .edit-medicine-cancel,
+  .edit-medicine-save {
+    width: 100%;
+  }
+}

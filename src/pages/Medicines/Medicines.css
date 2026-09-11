@@ -1,0 +1,1147 @@
+.medicines-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--background);
+}
+
+.medicines-main {
+  min-height: 100vh;
+
+  margin-left: 220px;
+
+  padding: 28px 32px 45px;
+
+  background: var(--background);
+
+  overflow-x: hidden;
+}
+
+.medicines-header {
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.medicines-header > div {
+  min-width: 0;
+}
+
+.medicines-breadcrumb {
+  margin: 0 0 5px;
+
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.medicines-header h1 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 28px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.medicines-description {
+  margin-top: 6px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+.medicines-add-button {
+  min-width: 135px;
+  height: 40px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 14px rgba(59, 130, 246, 0.18);
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.medicines-add-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.25);
+}
+
+.medicines-add-button:active {
+  transform: translateY(0);
+}
+
+.medicines-summary {
+  width: 100%;
+
+  margin-bottom: 18px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.medicine-summary-card {
+  min-width: 0;
+  min-height: 92px;
+
+  padding: 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--surface);
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.medicine-summary-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.medicine-summary-card > div:last-child {
+  min-width: 0;
+}
+
+.medicine-summary-card span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.medicine-summary-card strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 21px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.medicine-summary-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Total Medicines */
+
+.medicine-summary-icon.blue {
+  background: var(--primary-light);
+
+  color: var(--primary);
+}
+
+/* Active */
+
+.medicine-summary-icon.green {
+  background: var(--success-light);
+
+  color: var(--success);
+}
+
+/* Completed */
+
+.medicine-summary-icon.purple {
+  background: var(--accent-light);
+
+  color: var(--accent);
+}
+
+/* NEW - Missed */
+
+.medicine-summary-icon.red {
+  background: var(--danger-light);
+
+  color: var(--danger);
+}
+
+.medicine-summary-missed {
+  cursor: pointer;
+}
+
+.medicine-summary-missed:hover {
+  border-color: #fecaca;
+
+  background: #fffdfd;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 22px rgba(239, 68, 68, 0.1);
+}
+
+.medicine-summary-missed:focus {
+  outline: 2px solid rgba(239, 68, 68, 0.35);
+
+  outline-offset: 2px;
+}
+
+.medicine-summary-missed:active {
+  transform: translateY(0);
+}
+
+.medicines-toolbar {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 12px 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--surface);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.medicines-search {
+  width: min(390px, 100%);
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--white);
+
+  color: var(--text-secondary);
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.medicines-search:focus-within {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+.medicines-search svg {
+  flex-shrink: 0;
+}
+
+.medicines-search input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-size: 12px;
+}
+
+.medicines-search input::placeholder {
+  color: var(--text-light);
+}
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.medicines-filters {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.medicines-filters button {
+  min-width: 68px;
+  height: 33px;
+
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 17px;
+
+  background: var(--border-light);
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.medicines-filters button:hover {
+  color: var(--primary);
+
+  background: var(--blue-50);
+}
+
+.medicines-filters button.active {
+  background: var(--primary);
+
+  color: var(--white);
+}
+
+.medicines-filters button:active {
+  transform: scale(0.97);
+}
+
+.medicines-list-heading {
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.medicines-list-heading h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.medicines-list-heading p {
+  margin-top: 3px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   MEDICINES GRID
+========================================================= */
+
+.medicines-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   MEDICINE CARD
+========================================================= */
+
+.medicine-list-card {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--surface);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.medicine-list-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #dbe4ef;
+
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   MEDICINE CARD HEADER
+========================================================= */
+
+.medicine-card-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.medicine-card-name {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.medicine-card-pill {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicine-card-name > div:last-child {
+  min-width: 0;
+}
+
+.medicine-card-name h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.medicine-card-name p {
+  margin-top: 3px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   THREE DOT MENU
+========================================================= */
+
+.medicine-menu-wrapper {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.medicine-menu-button {
+  width: 31px;
+  height: 31px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.medicine-menu-button:hover {
+  background: var(--blue-50);
+
+  color: var(--primary);
+}
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.medicine-menu {
+  position: absolute;
+
+  top: 36px;
+  right: 0;
+
+  z-index: 100;
+
+  width: 120px;
+
+  padding: 5px;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.medicine-menu button {
+  width: 100%;
+  height: 33px;
+
+  padding: 0 9px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  text-align: left;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.medicine-menu button:hover {
+  background: var(--blue-50);
+
+  color: var(--primary);
+}
+
+.medicine-menu button.delete {
+  color: var(--danger);
+}
+
+.medicine-menu button.delete:hover {
+  background: var(--danger-light);
+
+  color: var(--danger);
+}
+
+/* =========================================================
+   STATUS ROW
+========================================================= */
+
+.medicine-card-status-row {
+  margin-top: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.medicine-status {
+  min-height: 24px;
+
+  padding: 0 9px;
+
+  border-radius: 13px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.medicine-status > span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+/* Active */
+
+.medicine-status.active {
+  background: var(--success-light);
+
+  color: #15803d;
+}
+
+.medicine-status.active > span {
+  background: var(--success);
+}
+
+/* Completed */
+
+.medicine-status.completed {
+  background: var(--accent-light);
+
+  color: var(--accent-dark);
+}
+
+.medicine-status.completed > span {
+  background: var(--accent);
+}
+
+/* =========================================================
+   CARD DETAILS
+========================================================= */
+
+.medicine-card-details {
+  margin-top: 14px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid var(--border-light);
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.medicine-card-detail {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+}
+
+.medicine-detail-icon {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  border-radius: 7px;
+
+  background: var(--blue-50);
+
+  color: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicine-card-detail > div:last-child {
+  min-width: 0;
+}
+
+.medicine-card-detail span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+}
+
+.medicine-card-detail strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   REMINDER TIMES
+========================================================= */
+
+.medicine-reminders {
+  margin-top: 14px;
+}
+
+.medicine-reminders > span {
+  display: block;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.medicine-time-chips {
+  margin-top: 7px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.medicine-time-chips > span {
+  min-height: 27px;
+
+  padding: 0 9px;
+
+  border-radius: 14px;
+
+  background: var(--blue-50);
+
+  color: var(--primary);
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   INSTRUCTIONS
+========================================================= */
+
+.medicine-card-instructions {
+  margin-top: 13px;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  background: var(--background);
+}
+
+.medicine-card-instructions strong {
+  display: block;
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.medicine-card-instructions p {
+  margin-top: 4px;
+
+  color: var(--text-primary);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.medicine-card-footer {
+  margin-top: 14px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid var(--border-light);
+}
+
+.medicine-card-footer button {
+  width: 100%;
+  height: 35px;
+
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+
+  background: var(--white);
+
+  color: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.medicine-card-footer button:hover {
+  background: var(--primary);
+
+  color: var(--white);
+}
+
+.medicine-card-footer button:active {
+  transform: scale(0.99);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.medicines-empty {
+  width: 100%;
+
+  padding: 50px 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--white);
+
+  text-align: center;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.medicines-empty-icon {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicines-empty h2 {
+  margin-top: 12px;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.medicines-empty p {
+  max-width: 400px;
+
+  margin: 5px auto 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.medicines-empty button {
+  min-width: 120px;
+  height: 36px;
+
+  margin-top: 14px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--primary);
+
+  color: var(--white);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   LARGE LAPTOP / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .medicines-main {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .medicine-card-details {
+    gap: 7px;
+  }
+
+  .medicine-card-detail {
+    gap: 5px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+  .medicines-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .medicines-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .medicines-main {
+    margin-left: 190px;
+
+    padding: 24px 20px 40px;
+  }
+
+  .medicines-toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .medicines-search {
+    width: 100%;
+  }
+
+  .medicines-filters {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE SIDEBAR MODE
+========================================================= */
+
+@media (max-width: 700px) {
+  .medicines-main {
+    margin-left: 0;
+
+    padding: 76px 14px 35px;
+  }
+
+  .medicines-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .medicines-header h1 {
+    font-size: 25px;
+  }
+
+  .medicines-add-button {
+    width: 100%;
+  }
+
+  .medicines-filters {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .medicines-filters button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+  .medicines-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .medicines-summary {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .medicine-summary-card {
+    min-height: 80px;
+
+    padding: 13px;
+  }
+
+  .medicine-summary-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .medicine-summary-card strong {
+    font-size: 19px;
+  }
+
+  .medicines-toolbar {
+    padding: 10px;
+  }
+
+  .medicine-list-card {
+    padding: 13px;
+  }
+
+  .medicine-card-details {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .medicine-card-detail {
+    align-items: center;
+  }
+
+  .medicine-detail-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .medicines-main {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .medicines-header h1 {
+    font-size: 22px;
+  }
+
+  .medicines-filters {
+    gap: 5px;
+  }
+
+  .medicines-filters button {
+    padding: 0 7px;
+
+    font-size: 7px;
+  }
+
+  .medicine-card-name h3 {
+    max-width: 150px;
+  }
+}

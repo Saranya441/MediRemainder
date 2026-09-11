@@ -1,0 +1,292 @@
+.register-page-reference {
+  min-height: 100vh;
+  padding: 28px 18px;
+  background: linear-gradient(135deg, #f2faff, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-reference-container {
+  width: min(920px, 100%);
+  min-height: 580px;
+  display: grid;
+  grid-template-columns: 43% 57%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--white);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* LEFT */
+
+.register-reference-left {
+  padding: 32px;
+  background: linear-gradient(150deg, #f3fbff, #eaf6ff);
+}
+
+.register-reference-brand {
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.register-reference-brand img {
+  width: 38px;
+  height: 38px;
+}
+
+.register-reference-brand div {
+  display: flex;
+  align-items: baseline;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.register-reference-brand span {
+  color: var(--text-primary);
+}
+
+.register-reference-brand strong {
+  color: var(--info);
+}
+
+.register-reference-visual {
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.register-reference-visual h2 {
+  max-width: 280px;
+  color: var(--text-primary);
+  font-size: 22px;
+}
+
+.register-reference-visual p {
+  max-width: 270px;
+  margin-top: 7px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.register-illustration-image {
+  width: min(100%, 255px);
+  max-height: 200px;
+  margin: 18px 0;
+  object-fit: contain;
+}
+
+.register-reference-visual small {
+  color: var(--text-light);
+  font-size: 11px;
+}
+
+/* RIGHT */
+
+.register-reference-right {
+  padding: 36px 48px;
+  display: flex;
+  align-items: center;
+}
+
+.register-reference-form {
+  width: 100%;
+}
+
+.register-reference-form h1 {
+  color: var(--text-primary);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.register-reference-subtitle {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.register-reference-field {
+  margin-bottom: 13px;
+}
+
+.register-reference-field label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.register-reference-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.register-reference-input > svg {
+  position: absolute;
+  left: 11px;
+  color: var(--text-light);
+}
+
+.register-reference-input input {
+  width: 100%;
+  height: 40px;
+  padding: 0 40px 0 35px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+}
+
+.register-reference-input input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+.register-password-toggle {
+  position: absolute;
+  right: 7px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-reference-error {
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--danger-light);
+  color: var(--danger);
+  font-size: 11px;
+}
+
+.register-reference-submit {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.register-reference-divider {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.register-reference-divider span {
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+.register-reference-divider small {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+.register-google-button {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.register-reference-login {
+  margin-top: 17px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.register-reference-login span {
+  color: var(--text-secondary);
+}
+
+.register-reference-login button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.register-reference-terms {
+  max-width: 330px;
+  margin: 12px auto 0;
+  color: var(--text-light);
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+  .register-reference-container {
+    grid-template-columns: 1fr;
+  }
+
+  .register-reference-left {
+    padding: 25px;
+  }
+
+  .register-reference-visual {
+    min-height: 280px;
+  }
+
+  .register-reference-right {
+    padding: 35px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-page-reference {
+    padding: 0;
+  }
+
+  .register-reference-container {
+    min-height: 100vh;
+    border: none;
+    border-radius: 0;
+  }
+
+  .register-reference-left {
+    display: none;
+  }
+
+  .register-reference-right {
+    padding: 28px 20px;
+  }
+}

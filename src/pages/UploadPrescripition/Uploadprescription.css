@@ -1,0 +1,507 @@
+.upload-prescription-page {
+  min-height: 100vh;
+  background: #f5f9ff;
+}
+
+.upload-prescription-main {
+  min-height: 100vh;
+  margin-left: 220px;
+  padding: 18px 24px 36px;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+.upload-page-header {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.upload-page-header h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.upload-page-header p {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.upload-user-area {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text-secondary);
+}
+
+.upload-notification-button {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.upload-notification-button:hover {
+  background: var(--border-light);
+}
+
+.upload-notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  background: var(--danger);
+}
+
+.upload-user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.upload-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-user-details strong {
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.upload-user-details span {
+  margin-top: 2px;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+/* CONTENT */
+
+.upload-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.prescription-upload-card {
+  padding: 20px;
+  border: 1px solid #e5edf7;
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.upload-card-heading {
+  margin-bottom: 15px;
+}
+
+.upload-card-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.upload-card-heading p {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+/* DROP ZONE */
+
+.prescription-drop-zone {
+  min-height: 290px;
+  padding: 30px 20px;
+  border: 1.5px dashed #b7c9df;
+  border-radius: 9px;
+  background: #fbfdff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.prescription-drop-zone.dragging {
+  border-color: var(--primary);
+  background: var(--blue-50);
+}
+
+.upload-icon-circle {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prescription-drop-zone h3 {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.prescription-drop-zone > p {
+  max-width: 400px;
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.choose-file-button {
+  min-width: 125px;
+  height: 36px;
+  margin-top: 14px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 7px;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.choose-file-button:hover {
+  background: var(--primary-dark);
+}
+
+.upload-file-support {
+  margin-top: 8px;
+  color: var(--text-light);
+  font-size: 11px;
+}
+
+.upload-divider {
+  width: 220px;
+  margin: 14px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.upload-divider span {
+  height: 1px;
+  flex: 1;
+  background: var(--border);
+}
+
+.upload-divider small {
+  color: var(--text-light);
+  font-size: 11px;
+}
+
+.camera-upload-button {
+  min-width: 125px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* PREVIEW */
+
+.uploaded-file-area {
+  padding: 14px;
+  border: 1px dashed #b7c9df;
+  border-radius: 9px;
+  background: #fbfdff;
+}
+
+.prescription-preview {
+  max-width: 430px;
+  max-height: 320px;
+  margin: 0 auto 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.prescription-preview img {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+}
+
+.pdf-preview {
+  min-height: 180px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.uploaded-file-information {
+  min-height: 52px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.uploaded-file-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploaded-file-text {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.uploaded-file-text strong {
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.uploaded-file-text span {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+.uploaded-success {
+  color: var(--success);
+}
+
+.remove-upload-button {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 6px;
+  background: var(--danger-light);
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-error {
+  margin-top: 9px;
+  color: var(--danger);
+  font-size: 13px;
+}
+
+/* NEXT */
+
+.upload-next-card {
+  margin-top: 13px;
+  padding: 18px 20px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #f7fbff;
+}
+
+.upload-next-card h2 {
+  margin-bottom: 13px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.upload-next-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.upload-next-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.upload-next-item > span {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.upload-next-item strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.upload-next-item p {
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ACTIONS */
+
+.upload-page-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.upload-cancel-button,
+.upload-continue-button {
+  min-width: 105px;
+  height: 38px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.upload-cancel-button {
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-secondary);
+}
+
+.upload-continue-button {
+  border: none;
+  background: var(--primary);
+  color: var(--white);
+}
+
+.upload-continue-button:hover {
+  background: var(--primary-dark);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .upload-prescription-main {
+    margin-left: 190px;
+    padding: 18px;
+  }
+
+  .upload-user-details {
+    display: none;
+  }
+
+  .upload-next-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .upload-prescription-main {
+    width: 100%;
+    margin-left: 0;
+    padding: 16px 14px 30px;
+  }
+
+  .upload-page-header {
+    align-items: flex-start;
+  }
+
+  .upload-user-details,
+  .upload-user-area > svg {
+    display: none;
+  }
+
+  .prescription-drop-zone {
+    min-height: 280px;
+    padding: 25px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-page-header h1 {
+    font-size: 21px;
+  }
+
+  .upload-page-header p {
+    max-width: 230px;
+    font-size: 21px;
+  }
+
+  .prescription-upload-card {
+    padding: 14px;
+  }
+
+  .upload-divider {
+    width: 180px;
+  }
+
+  .upload-page-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .upload-cancel-button,
+  .upload-continue-button {
+    width: 100%;
+    min-width: 0;
+  }
+}

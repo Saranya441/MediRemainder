@@ -1,0 +1,339 @@
+.missed-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missed-modal {
+  width: min(620px, 100%);
+  max-height: calc(100vh - 48px);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: missedModalAppear 0.2s ease;
+}
+
+@keyframes missedModalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.missed-modal-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.missed-modal-title-section {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.missed-modal-title-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: var(--danger-light);
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missed-modal-title-section h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.missed-modal-title-section p {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.missed-modal-close {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.missed-modal-close:hover {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.missed-modal-summary {
+  margin: 15px 20px 0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff7f7, var(--danger-light));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.missed-modal-summary span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.missed-modal-summary strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--danger);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.missed-modal-summary-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missed-modal-list {
+  padding: 15px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.missed-medicine-item {
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  display: grid;
+  grid-template-columns:
+    44px
+    minmax(0, 1fr);
+  gap: 11px;
+  transition: var(--transition-fast);
+}
+
+.missed-medicine-item:hover {
+  border-color: #fecaca;
+  background: #fffdfd;
+}
+
+.missed-item-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: var(--danger-light);
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missed-item-content {
+  min-width: 0;
+}
+
+.missed-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.missed-item-top h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.missed-item-top > div > span {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.missed-status {
+  padding: 5px 9px;
+  border-radius: 14px;
+  background: var(--danger-light);
+  color: var(--danger);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.missed-item-details {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.missed-detail {
+  min-width: 0;
+  padding: 9px;
+  border-radius: 8px;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.missed-detail svg {
+  flex-shrink: 0;
+  color: var(--danger);
+}
+
+.missed-detail span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 9px;
+}
+
+.missed-detail strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-primary);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.missed-item-instruction {
+  margin-top: 9px;
+}
+
+.missed-item-instruction span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 9px;
+}
+
+.missed-item-instruction p {
+  margin-top: 3px;
+  color: var(--text-primary);
+  font-size: 10px;
+}
+
+.missed-empty-state {
+  padding: 42px 15px;
+  text-align: center;
+}
+
+.missed-empty-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--success-light);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missed-empty-state h3 {
+  margin-top: 10px;
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.missed-empty-state p {
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.missed-modal-footer {
+  padding: 13px 20px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.missed-modal-footer button {
+  min-width: 88px;
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .missed-modal-overlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .missed-modal {
+    width: 100%;
+    max-height: 90vh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .missed-modal-header {
+    padding: 15px;
+  }
+
+  .missed-modal-summary {
+    margin: 12px 15px 0;
+  }
+
+  .missed-modal-list {
+    padding: 12px 15px;
+  }
+
+  .missed-item-details {
+    grid-template-columns: 1fr;
+  }
+
+  .missed-modal-footer {
+    padding: 12px 15px;
+  }
+
+  .missed-modal-footer button {
+    width: 100%;
+  }
+}
